@@ -6,7 +6,7 @@ public class cameraFollow : MonoBehaviour
 {
     public Transform target;
     public Transform player;
-    public float smoothSpeed = 0.4f;
+    public float smoothSpeed = 0.2f;
 
     private void FixedUpdate()
     {
@@ -14,5 +14,6 @@ public class cameraFollow : MonoBehaviour
 
         transform.position = smoothPos;
         transform.LookAt(player);
+        transform.rotation = player.rotation;
     }
 }

@@ -15,7 +15,6 @@ public class playerShip : MonoBehaviour
             rb = GetComponent<Rigidbody>();
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-        
     }
 
     public void PitchYawInput(InputAction.CallbackContext context)

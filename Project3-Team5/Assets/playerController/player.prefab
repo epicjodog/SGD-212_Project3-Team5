@@ -4902,7 +4902,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1211682865831804669}
         m_TargetAssemblyTypeName: playerShip, Assembly-CSharp
-        m_MethodName: PitchYawInput
+        m_MethodName: RollInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4918,7 +4918,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1211682865831804669}
         m_TargetAssemblyTypeName: playerShip, Assembly-CSharp
-        m_MethodName: RollInput
+        m_MethodName: PitchYawInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5091,15 +5091,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bde1c2db018abce439874d79bfdb4926, type: 3}
       propertyPath: m_LocalScale.x
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bde1c2db018abce439874d79bfdb4926, type: 3}
       propertyPath: m_LocalScale.y
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bde1c2db018abce439874d79bfdb4926, type: 3}
       propertyPath: m_LocalScale.z
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bde1c2db018abce439874d79bfdb4926, type: 3}
       propertyPath: m_LocalPosition.x

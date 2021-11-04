@@ -16,21 +16,24 @@ public class Menu : MonoBehaviour
     void Start()
     {
         pauseMenu.SetActive(false);//When game starts pause menu will not start up as well
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))//If Esc is press pause menu will pop up and pause game
+        if (Input.GetKeyDown(KeyCode.Escape))//If Esc is press pause menu will pop up and pause game. frees up the cursor too.
         {
             if (isPaused)
             {
                 ResumeGame();
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
             else
             {
                 PauseGame();
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
         }
     }
