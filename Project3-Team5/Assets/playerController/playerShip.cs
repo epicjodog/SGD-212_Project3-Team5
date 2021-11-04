@@ -12,9 +12,10 @@ public class playerShip : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+            rb = GetComponent<Rigidbody>();
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
     public void PitchYawInput(InputAction.CallbackContext context)
@@ -40,9 +41,12 @@ public class playerShip : MonoBehaviour
 
     private void Update()
     {
-        Vector3 trueDir = new Vector3(shipDir.x, shipDir.y, 0f);
-        transform.Rotate(trueDir * 0.2f);
-        CheckMoveSpeed();
+        if (!Menu.isPaused)
+        {
+            Vector3 trueDir = new Vector3(shipDir.x, shipDir.y, 0f);
+            transform.Rotate(trueDir * 0.2f);
+            CheckMoveSpeed();
+        }
     }
 
     private void FixedUpdate()

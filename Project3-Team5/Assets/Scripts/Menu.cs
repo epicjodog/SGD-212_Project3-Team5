@@ -7,7 +7,7 @@ public class Menu : MonoBehaviour
 {
     public GameObject pauseMenu;
 
-    public bool isPaused;
+    public static bool isPaused;
     public void playGame(int SceneIndex)
     {
         SceneManager.LoadScene("Level 1");//Will switch between menu to level 1 
