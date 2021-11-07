@@ -8,6 +8,7 @@ public class CheckpointController : MonoBehaviour
 {
     [SerializeField] GameObject[] checkpoints; //do this in order
     [SerializeField] int currentCheckpoint = 0;
+    AudioManager audioMan;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,9 @@ public class CheckpointController : MonoBehaviour
             checkpoint.GetComponent<Renderer>().material.color = new Color(0, 0, 0, 0.25f);
         }
         checkpoints[currentCheckpoint].GetComponent<Renderer>().material.color = new Color(255, 255, 0);
+
+        try { audioMan = GetComponent<AudioManager>(); }
+        catch { print("Warning: Audio Manager Component not attached to player!"); }
     }
 
     // Update is called once per frame
@@ -36,11 +40,13 @@ public class CheckpointController : MonoBehaviour
                     checkpoints[currentCheckpoint].GetComponent<Renderer>().material.color = new Color(255, 255, 0);
                     //do what logic you need to set for the new checkpoint ring: checkpoints[currentCheckpoint]
                     print("Current checkpoint is " + currentCheckpoint);
+
+                    //audioMan.Play("");
                 }
                 else
                 {
                     print("Player has completed the level");
-
+                    //audioMan.Play("");
                 }
                 other.gameObject.SetActive(false);
             }           

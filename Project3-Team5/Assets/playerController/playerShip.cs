@@ -10,11 +10,18 @@ public class playerShip : MonoBehaviour
     private Rigidbody rb;
     public float flySpeed = 10;
 
+    AudioManager audioMan;
+
     private void Start()
     {
             rb = GetComponent<Rigidbody>();
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+        try { audioMan = GetComponent<AudioManager>(); }
+        catch { print("Warning: Audio Manager Component not attached to player!"); }
+
+        audioMan.Play("Acceleration");
+        
     }
 
     public void PitchYawInput(InputAction.CallbackContext context)
@@ -53,6 +60,8 @@ public class playerShip : MonoBehaviour
         rb.AddRelativeForce(Vector3.forward * throttleInput * flySpeed);
         rb.AddRelativeTorque(Vector3.forward * 10 * shipDir.z);
         //LevelOut();
+
+        audioMan.ChangePitch("Acceleration", (rb.velocity.magnitude / 30));
     }
 
     private void CheckMoveSpeed()
