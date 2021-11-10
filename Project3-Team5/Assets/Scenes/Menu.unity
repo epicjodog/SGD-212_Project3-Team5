@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 1033056053}
   - component: {fileID: 1033056052}
   m_Layer: 5
-  m_Name: Button
+  m_Name: playButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -957,6 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00d3e455cd2610d41a313f16e679d869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
 --- !u!1 &1762627728
 GameObject:
   m_ObjectHideFlags: 0

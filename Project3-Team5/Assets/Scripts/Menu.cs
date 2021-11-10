@@ -12,6 +12,11 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene("Level 1");//Will switch between menu to level 1 
     }
+
+    public void playLevel2(int SceneIndex)
+    {
+        SceneManager.LoadScene("Level 2");//Will switch between menu to level 1 
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -26,14 +31,14 @@ public class Menu : MonoBehaviour
             if (isPaused)
             {
                 ResumeGame();
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;//Cursor is stuck in place
+                Cursor.visible = false;//Cursor is invisible 
             }
             else
             {
                 PauseGame();
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;//Cursor is seen
+                Cursor.lockState = CursorLockMode.None;//Cursor can move around freely and not stuck in place
             }
         }
     }
@@ -42,7 +47,7 @@ public class Menu : MonoBehaviour
         pauseMenu.SetActive(true);//Turns on pause menu
         Time.timeScale = 0f;// stops game
         isPaused = true;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.None;//Cursor can move around freely and not stuck in place
     }
 
     public void ResumeGame()

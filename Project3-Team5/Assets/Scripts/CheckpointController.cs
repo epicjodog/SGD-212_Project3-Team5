@@ -10,6 +10,8 @@ public class CheckpointController : MonoBehaviour
     [SerializeField] int currentCheckpoint = 0;
     AudioManager audioMan;
 
+    public GameObject winPanel;//Adds a spot for winPanel to be called for
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,11 @@ public class CheckpointController : MonoBehaviour
                 {
                     print("Player has completed the level");
                     //audioMan.Play("");
+
+                    winPanel.gameObject.SetActive(true);//Activates win panel when completing last checkpoint
+                    Time.timeScale = 0f;// stops game
+                    Cursor.lockState = CursorLockMode.None;//Cursor is allowed to move around freely and not stuck in place
+                    Cursor.visible = true;//Cursor is seen
                 }
                 other.gameObject.SetActive(false);
             }           
