@@ -15,7 +15,8 @@ public class CheckpointController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach(GameObject checkpoint in checkpoints)
+        Time.timeScale = 1f;
+        foreach (GameObject checkpoint in checkpoints)
         {
             checkpoint.GetComponent<Renderer>().material.color = new Color(0, 0, 0, 0.25f);
         }
@@ -23,12 +24,6 @@ public class CheckpointController : MonoBehaviour
 
         try { audioMan = GetComponent<AudioManager>(); }
         catch { print("Warning: Audio Manager Component not attached to player!"); }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -43,12 +38,12 @@ public class CheckpointController : MonoBehaviour
                     //do what logic you need to set for the new checkpoint ring: checkpoints[currentCheckpoint]
                     print("Current checkpoint is " + currentCheckpoint);
 
-                    //audioMan.Play("");
+                    audioMan.Play("Checkpoint");
                 }
                 else
                 {
                     print("Player has completed the level");
-                    //audioMan.Play("");
+                    audioMan.Play("Win");
 
                     winPanel.gameObject.SetActive(true);//Activates win panel when completing last checkpoint
                     Time.timeScale = 0f;// stops game

@@ -4819,6 +4819,7 @@ GameObject:
   - component: {fileID: 1211682865831804669}
   - component: {fileID: 1211682865831804668}
   - component: {fileID: 1211682865831804664}
+  - component: {fileID: 6387141481778570282}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -5004,6 +5005,87 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flySpeed: 10
+--- !u!114 &6387141481778570282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211682865831804671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e9ecdc8cd8093498730f04d0d47660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
+  sounds:
+  - name: Acceleration
+    clip: {fileID: 8300000, guid: e0027515891f15e4aaee2f85d77435b5, type: 3}
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    spatialBlend: 0
+    loop: 1
+    playOnAwake: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Hit
+    clip: {fileID: 8300000, guid: b492756c9ed38ea43935d022d7ba3e50, type: 3}
+    volume: 0.5
+    volumeVariance: 0.25
+    pitch: 1
+    pitchVariance: 0.25
+    spatialBlend: 0
+    loop: 0
+    playOnAwake: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Checkpoint
+    clip: {fileID: 8300000, guid: 8cea051b93ab1844f8c8573a0317553e, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    spatialBlend: 0
+    loop: 0
+    playOnAwake: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: 906bc4b99e13f3b4b8cdeb609544f689, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    spatialBlend: 0
+    loop: 0
+    playOnAwake: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Hit Minor
+    clip: {fileID: 8300000, guid: d84f93cdf32e0b54aa54d3721221c56b, type: 3}
+    volume: 0.6
+    volumeVariance: 0.25
+    pitch: 1
+    pitchVariance: 0.25
+    spatialBlend: 0
+    loop: 0
+    playOnAwake: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Crash
+    clip: {fileID: 8300000, guid: 1de68ce0d3819734698089d797db6e69, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    spatialBlend: 0
+    loop: 0
+    playOnAwake: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  isSingleton: 0
 --- !u!1 &1211682866250810953
 GameObject:
   m_ObjectHideFlags: 0
