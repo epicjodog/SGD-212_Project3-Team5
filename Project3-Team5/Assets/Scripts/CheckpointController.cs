@@ -55,7 +55,7 @@ public class CheckpointController : MonoBehaviour
                     Cursor.lockState = CursorLockMode.None;//Cursor is allowed to move around freely and not stuck in place
                     Cursor.visible = true;//Cursor is seen
                 }
-                other.gameObject.SetActive(false);
+                other.gameObject.GetComponent<MeshRenderer>().enabled = false;
             }           
         }
     }
