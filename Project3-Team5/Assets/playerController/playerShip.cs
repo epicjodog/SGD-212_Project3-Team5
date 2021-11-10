@@ -61,7 +61,7 @@ public class playerShip : MonoBehaviour
         rb.AddRelativeTorque(Vector3.forward * 10 * shipDir.z);
         //LevelOut();
 
-        audioMan.ChangePitch("Acceleration", (rb.velocity.magnitude / 30));
+        audioMan.ChangePitch("Acceleration", rb.velocity.magnitude / 30);
     }
 
     private void CheckMoveSpeed()
@@ -72,8 +72,22 @@ public class playerShip : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (rb.velocity.magnitude >= 4f)
+        {
+            //print(rb.velocity.magnitude);
+            audioMan.Play("Hit");
+        }
+        else
+        {
+            audioMan.Play("Hit Minor");
+        }
+        
+    }
+
     //private void LevelOut()
     //{
-        //float roll = transform.eulerAngles.z;
+    //float roll = transform.eulerAngles.z;
     //}
 }
