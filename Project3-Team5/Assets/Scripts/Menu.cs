@@ -5,9 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    [Header("Pause Menu")]
     public GameObject pauseMenu;
 
     public static bool isPaused;
+
+    [Header("Main Menu")]
+    public GameObject helpPanel;
+    public GameObject[] helpPanelPages;
+    public GameObject creditsPanel;
+
+    int helpPanelCurrentPage = 0;
+
+
     public void playGame(int SceneIndex)
     {
         SceneManager.LoadScene("Level 1");//Will switch between menu to level 1 
@@ -64,5 +74,53 @@ public class Menu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void HelpButton()
+    {
+        if(helpPanel.activeSelf == true)
+        {
+            helpPanel.SetActive(false);
+        }
+        else
+        {
+            helpPanel.SetActive(true);
+        }
+    }
+    public void HelpButtonTurnPage(bool isForward)
+    {
+        helpPanelPages[helpPanelCurrentPage].SetActive(false);
+        if (isForward)
+        {
+            helpPanelCurrentPage++;
+        }
+        else
+        {
+            helpPanelCurrentPage--;
+        }
+        helpPanelPages[helpPanelCurrentPage].SetActive(true);
+    }
+    /*public void CreditButtonTurnPage(bool isForward)
+    {
+        helpPanelPages[helpPanelCurrentPage].SetActive(false);
+        if (isForward)
+        {
+            helpPanelCurrentPage++;
+        }
+        else
+        {
+            helpPanelCurrentPage--;
+        }
+        helpPanelPages[helpPanelCurrentPage].SetActive(true);
+    }*/
+    public void CreditsButton()
+    {
+        if(creditsPanel.activeSelf == true)
+        {
+            creditsPanel.SetActive(false);
+        }
+        else
+        {
+            creditsPanel.SetActive(true);
+        }
     }
 }
