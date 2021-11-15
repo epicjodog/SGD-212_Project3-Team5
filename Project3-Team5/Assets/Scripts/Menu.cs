@@ -25,20 +25,37 @@ public class Menu : MonoBehaviour
 
     int helpPanelCurrentPage = 0;
     int creditsPanelCurrentPage = 0;
+    AudioManager audioMan; //for the main menu
 
     public void loadLevel(string levelName) //migrate all the ui to this function
-    {
+    {        
         //later, add an if statement seeing if the level has been unlocked.
+        StartCoroutine(LevelTransition(levelName));
+    }
+
+    private IEnumerator LevelTransition(string levelName)
+    {
+        float offset = 1 - AudioListener.volume;
+        for (float vol = AudioListener.volume; vol >= 0; vol -= 0.1f) //lowers the volume for transition
+        {
+            AudioListener.volume = vol;
+            yield return new WaitForSeconds(0.1f);
+        }
+        yield return new WaitForSeconds(offset); //always has a second to transition
+
         SceneManager.LoadScene(levelName);
     }
+
     public void playGame(int SceneIndex)
     {
         SceneManager.LoadScene("Level 1");//Will switch between menu to level 1 
+        print("Warning: will be depricated, use loadLevel instead!");
     }
 
     public void playLevel2(int SceneIndex)
     {
         SceneManager.LoadScene("Level 2");//Will switch between menu to level 1 
+        print("Warning: will be depricated, use loadLevel instead!");
     }
 
     // Start is called before the first frame update
@@ -49,6 +66,8 @@ public class Menu : MonoBehaviour
             levelSelectPanel.SetActive(false);
             helpPanel.SetActive(false);
             creditsPanel.SetActive(false);
+            audioMan = GetComponent<AudioManager>();
+            audioMan.Play("Music");
         }
         pauseMenu.SetActive(false);//When game starts pause menu will not start up as well
         //check to see if levels are unlocked. if not, disable specific buttons
@@ -120,10 +139,12 @@ public class Menu : MonoBehaviour
     {
         if (levelSelectPanel.activeSelf == true)
         {
+            audioMan.Play("Back");
             levelSelectPanel.SetActive(false);
         }
         else
         {
+            audioMan.Play("Select");
             levelSelectPanel.SetActive(true);
             helpPanel.SetActive(false);
             creditsPanel.SetActive(false);
@@ -134,10 +155,12 @@ public class Menu : MonoBehaviour
     {
         if(helpPanel.activeSelf == true)
         {
+            audioMan.Play("Back");
             helpPanel.SetActive(false);
         }
         else
         {
+            audioMan.Play("Select");
             levelSelectPanel.SetActive(false);
             helpPanel.SetActive(true);
             creditsPanel.SetActive(false);
@@ -167,10 +190,12 @@ public class Menu : MonoBehaviour
     {
         if(creditsPanel.activeSelf == true)
         {
+            audioMan.Play("Back");
             creditsPanel.SetActive(false);
         }
         else
         {
+            audioMan.Play("Select");
             levelSelectPanel.SetActive(false);
             helpPanel.SetActive(false);
             creditsPanel.SetActive(true);
