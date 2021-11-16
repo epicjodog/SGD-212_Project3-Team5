@@ -49,6 +49,10 @@ public class CheckpointController : MonoBehaviour
                     Time.timeScale = 0f;// stops game
                     Cursor.lockState = CursorLockMode.None;//Cursor is allowed to move around freely and not stuck in place
                     Cursor.visible = true;//Cursor is seen
+                    /*if(PlayerPrefs.GetInt("Progress") != 3) //TODO
+                    {
+                        PlayerPrefs.SetInt("Progress", PlayerPrefs.GetInt("Progress") + 1);
+                    }*/                   
                 }
                 other.gameObject.GetComponent<MeshRenderer>().enabled = false;
             }           

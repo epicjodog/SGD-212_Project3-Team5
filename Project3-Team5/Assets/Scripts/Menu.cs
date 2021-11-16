@@ -31,6 +31,7 @@ public class Menu : MonoBehaviour
     {        
         //later, add an if statement seeing if the level has been unlocked.
         StartCoroutine(LevelTransition(levelName));
+        audioMan.Play("Select");
     }
 
     private IEnumerator LevelTransition(string levelName)
@@ -66,17 +67,38 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //maybe make the playerprefs here? player progress and volume
         AudioListener.volume = 1; //this should be changed when we implement a volume slider
         if(isMainMenu)
         {
+            if (PlayerPrefs.HasKey("Progress") == false)
+            {
+                PlayerPrefs.SetInt("Progress", 0);
+            }
             levelSelectPanel.SetActive(false);
             helpPanel.SetActive(false);
             creditsPanel.SetActive(false);
             audioMan = GetComponent<AudioManager>();
             audioMan.Play("Music");
+            //locking levels, uncomment when ready
+            /*levelSelectButtons[1].interactable = false;
+            levelSelectButtons[2].interactable = false;
+            if (PlayerPrefs.HasKey("Progress"))
+            {
+                if (PlayerPrefs.GetInt("Progress") > 1)
+                {
+                    levelSelectButtons[1].interactable = true;
+                }
+                if (PlayerPrefs.GetInt("Progress") > 2)
+                {
+                    levelSelectButtons[2].interactable = true;
+                }
+            }*/
         }
         pauseMenu.SetActive(false);//When game starts pause menu will not start up as well
         //check to see if levels are unlocked. if not, disable specific buttons
+
+        
     }
 
     // Update is called once per frame
@@ -180,6 +202,7 @@ public class Menu : MonoBehaviour
             if(helpPanelCurrentPage < helpPanelPages.Length - 1)
             {
                 helpPanelCurrentPage++;
+                audioMan.Play("MiniButton");
             }          
         }
         else
@@ -187,6 +210,7 @@ public class Menu : MonoBehaviour
             if(helpPanelCurrentPage > 0)
             {
                 helpPanelCurrentPage--;
+                audioMan.Play("MiniButton");
             }           
         }
         helpPanelPages[helpPanelCurrentPage].SetActive(true);
@@ -215,6 +239,7 @@ public class Menu : MonoBehaviour
             if(creditsPanelCurrentPage < creditsPanelPages.Length - 1)
             {
                 creditsPanelCurrentPage++;
+                audioMan.Play("MiniButton");
             }           
         }
         else
@@ -222,8 +247,21 @@ public class Menu : MonoBehaviour
             if(creditsPanelCurrentPage > 0)
             {
                 creditsPanelCurrentPage--;
+                audioMan.Play("MiniButton");
             }
         }
         creditsPanelPages[creditsPanelCurrentPage].SetActive(true);
+    }
+    public void OnResetButtonClick()
+    {
+        //resets progress
+    }
+    public void OnMuteSFXButtonClick()
+    {
+        //sets sfx volume to 0
+    }
+    public void OnMuteMusicButtonClick()
+    {
+        //sets music volume to 0
     }
 }
