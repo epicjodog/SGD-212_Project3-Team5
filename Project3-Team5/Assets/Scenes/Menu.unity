@@ -1224,7 +1224,7 @@ GameObject:
   - component: {fileID: 135513940}
   - component: {fileID: 135513941}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: musicVolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1299,10 +1299,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.2
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1579749260}
+        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
+        m_MethodName: ChangeMusicVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &163960785
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,7 +2103,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1750331776}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -2474,10 +2486,10 @@ RectTransform:
   m_Father: {fileID: 1579749257}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -528.46533, y: 404.21}
-  m_SizeDelta: {x: 813.8505, y: 190.4213}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 431.53467, y: -135.79001}
+  m_SizeDelta: {x: 813.8505, y: 190.42126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &603524880
 MonoBehaviour:
@@ -3462,7 +3474,7 @@ RectTransform:
   m_Children:
   - {fileID: 2092744919}
   m_Father: {fileID: 1750331776}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -3512,7 +3524,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 840642471}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1579749260}
+        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
+        m_MethodName: OnMuteSFXButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &840642471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5956,7 +5980,7 @@ RectTransform:
   m_Children:
   - {fileID: 1090546886}
   m_Father: {fileID: 1750331776}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -6006,7 +6030,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1552465842}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1579749260}
+        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
+        m_MethodName: OnMuteMusicButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1552465842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6059,6 +6095,7 @@ GameObject:
   - component: {fileID: 1579749254}
   - component: {fileID: 1579749258}
   - component: {fileID: 1579749259}
+  - component: {fileID: 1579749260}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6218,7 +6255,7 @@ MonoBehaviour:
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Music
-    clip: {fileID: 8300000, guid: f0ca2cd984798f6438d4cb9ae895d60d, type: 3}
+    clip: {fileID: 8300000, guid: 6a34f8629fcc39d488c0771e64334335, type: 3}
     volume: 0.2
     volumeVariance: 0
     pitch: 1
@@ -6240,6 +6277,20 @@ MonoBehaviour:
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   isSingleton: 0
+--- !u!114 &1579749260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579749253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7d2bcb5040a624c88654281a8af3cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxSlider: {fileID: 1957687007}
+  musicSlider: {fileID: 135513941}
 --- !u!1 &1580995065
 GameObject:
   m_ObjectHideFlags: 0
@@ -6664,10 +6715,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 135513940}
+  - {fileID: 1957687006}
   - {fileID: 535741986}
   - {fileID: 1552465840}
   - {fileID: 840642469}
-  - {fileID: 1957687006}
   m_Father: {fileID: 1579749257}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7321,7 +7372,7 @@ GameObject:
   - component: {fileID: 1957687006}
   - component: {fileID: 1957687007}
   m_Layer: 5
-  m_Name: Slider (1)
+  m_Name: sfxVolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7342,7 +7393,7 @@ RectTransform:
   - {fileID: 816862144}
   - {fileID: 1428655856}
   m_Father: {fileID: 1750331776}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -7396,10 +7447,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1579749260}
+        m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
+        m_MethodName: ChangeSFXVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1965807848
 GameObject:
   m_ObjectHideFlags: 0

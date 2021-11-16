@@ -21,7 +21,7 @@ public class Menu : MonoBehaviour
     [SerializeField] GameObject[] helpPanelPages;
     //Credits
     [SerializeField] GameObject creditsPanel;
-    [SerializeField] GameObject[] creditsPanelPages;
+    [SerializeField] GameObject[] creditsPanelPages;    
 
     int helpPanelCurrentPage = 0;
     int creditsPanelCurrentPage = 0;
@@ -231,7 +231,7 @@ public class Menu : MonoBehaviour
             creditsPanel.SetActive(true);
         }
     }
-    public void CreditButtonTurnPage(bool isForward) //something that I thought of for the pause menu
+    public void CreditButtonTurnPage(bool isForward)
     {
         creditsPanelPages[creditsPanelCurrentPage].SetActive(false);
         if (isForward)
@@ -255,13 +255,6 @@ public class Menu : MonoBehaviour
     public void OnResetButtonClick()
     {
         //resets progress
-    }
-    public void OnMuteSFXButtonClick()
-    {
-        //sets sfx volume to 0
-    }
-    public void OnMuteMusicButtonClick()
-    {
-        //sets music volume to 0
-    }
+    }    
+    
 }
