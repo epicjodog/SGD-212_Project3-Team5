@@ -54,7 +54,12 @@ public class Menu : MonoBehaviour
 
     public void playLevel2(int SceneIndex)
     {
-        SceneManager.LoadScene("Level 2");//Will switch between menu to level 1 
+        SceneManager.LoadScene("Level 2");//Will switch between level 1 to level 2 
+        print("Warning: will be depricated, use loadLevel instead!");
+    }
+    public void playLevel3(int SceneIndex)
+    {
+        SceneManager.LoadScene("Level 3");//Will switch between level 2 to level 3 
         print("Warning: will be depricated, use loadLevel instead!");
     }
 
