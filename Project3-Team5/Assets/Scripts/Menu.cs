@@ -66,6 +66,7 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioListener.volume = 1; //this should be changed when we implement a volume slider
         if(isMainMenu)
         {
             levelSelectPanel.SetActive(false);
