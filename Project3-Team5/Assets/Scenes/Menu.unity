@@ -5406,7 +5406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1183761499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7622,17 +7622,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Hayden Burns:
+  m_Text: 'Hayden Burns: Programming
 
 
-    Josiah Holcom: Audio, programming, ui
+    Josiah Holcom: Audio, programming, UI
 
 
     Joseph
     Portillo-Navarrete: UI
 
 
-    Ryan Tafilowski:'
+    Ryan Tafilowski: Level design, writing'
 --- !u!222 &1957335497
 CanvasRenderer:
   m_ObjectHideFlags: 0
