@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
 {
     public Text timerText;//Will link player to timer text
     private float startTime;
+    [SerializeField] private int levelNum;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +23,12 @@ public class Timer : MonoBehaviour
         string seconds = (t % 60).ToString("f2");
 
         timerText.text = minutes + ":" + seconds;
+    }
+
+    public void SaveTime()
+    {
+        PlayerPrefs.SetString("level" + levelNum, timerText.text);
+        print(PlayerPrefs.GetString("level" + levelNum));
+        PlayerPrefs.Save();
     }
 }

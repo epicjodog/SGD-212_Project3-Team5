@@ -43,6 +43,7 @@ public class CheckpointController : MonoBehaviour
                 else
                 {
                     print("Player has completed the level");
+                    GetComponent<Timer>().SaveTime();
                     audioMan.Play("Win");
 
                     winPanel.gameObject.SetActive(true);//Activates win panel when completing last checkpoint
