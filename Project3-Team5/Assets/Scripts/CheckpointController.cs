@@ -49,11 +49,7 @@ public class CheckpointController : MonoBehaviour
                     winPanel.gameObject.SetActive(true);//Activates win panel when completing last checkpoint
                     Time.timeScale = 0f;// stops game
                     Cursor.lockState = CursorLockMode.None;//Cursor is allowed to move around freely and not stuck in place
-                    Cursor.visible = true;//Cursor is seen
-                    /*if(PlayerPrefs.GetInt("Progress") != 3) //TODO
-                    {
-                        PlayerPrefs.SetInt("Progress", PlayerPrefs.GetInt("Progress") + 1);
-                    }*/                   
+                    Cursor.visible = true;//Cursor is seen                 
                 }
                 other.gameObject.GetComponent<MeshRenderer>().enabled = false;
             }           

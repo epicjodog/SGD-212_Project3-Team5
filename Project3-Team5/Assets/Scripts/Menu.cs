@@ -95,7 +95,7 @@ public class Menu : MonoBehaviour
                 }
             }*/
         }
-        pauseMenu.SetActive(false);//When game starts pause menu will not start up as well
+        if (pauseMenu != null) pauseMenu.SetActive(false);//When game starts pause menu will not start up as well
         //check to see if levels are unlocked. if not, disable specific buttons
 
         
@@ -256,7 +256,11 @@ public class Menu : MonoBehaviour
     }
     public void OnResetButtonClick()
     {
-        //resets progress
+        if (PlayerPrefs.HasKey("progress"))
+        {
+            PlayerPrefs.SetInt("progress", 0);
+            LevelProgress.instance.ShowTimes();
+        }
     }    
     
 }

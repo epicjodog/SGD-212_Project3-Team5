@@ -29,6 +29,8 @@ public class Timer : MonoBehaviour
     {
         PlayerPrefs.SetString("level" + levelNum, timerText.text);
         print(PlayerPrefs.GetString("level" + levelNum));
+        PlayerPrefs.SetInt("progress", levelNum);
+        print(PlayerPrefs.GetInt("progress"));
         PlayerPrefs.Save();
     }
 }
