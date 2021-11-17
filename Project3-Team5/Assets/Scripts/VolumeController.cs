@@ -10,6 +10,7 @@ public class VolumeController : MonoBehaviour
     [Header("Volume Sliders")]
     [SerializeField] Slider sfxSlider;
     [SerializeField] Slider musicSlider;
+    [SerializeField] bool isPlayer = false;
     AudioManager audioMan;
 
     // Start is called before the first frame update
@@ -24,17 +25,7 @@ public class VolumeController : MonoBehaviour
 
     public void ChangeSFXVolume() //changes volume to slider value
     {
-        //AudioListener.volume = volumeSlider.value;
         PlayerPrefs.SetFloat("SFXVolume", sfxSlider.value);
-
-        /*if (volumeSlider.value == 0)
-        {
-            volumeIcon.sprite = speakerIcons[1];
-        }
-        else
-        {
-            volumeIcon.sprite = speakerIcons[0];
-        }*/
         ChangeVolume();
     }
     public void ChangeMusicVolume()
@@ -46,8 +37,13 @@ public class VolumeController : MonoBehaviour
     {
         foreach (Sound s in audioMan.sounds)
         {
-            s.volume = PlayerPrefs.GetFloat("SFXVolume");
+            //s.volume = s.volume * PlayerPrefs.GetFloat("SFXVolume") * 10;
+            s.volume = PlayerPrefs.GetFloat("SFXVolume");           
         }
+        if(isPlayer)
+        {
+            audioMan.ChangeVolume("Acceleration", PlayerPrefs.GetFloat("SFXVolume"));
+        }        
         audioMan.ChangeVolume("Music", PlayerPrefs.GetFloat("MusicVolume"));
     }
 

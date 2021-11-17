@@ -4820,6 +4820,7 @@ GameObject:
   - component: {fileID: 1211682865831804668}
   - component: {fileID: 1211682865831804664}
   - component: {fileID: 6387141481778570282}
+  - component: {fileID: 1268049686205342887}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -5086,6 +5087,20 @@ MonoBehaviour:
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   isSingleton: 0
+--- !u!114 &1268049686205342887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211682865831804671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7d2bcb5040a624c88654281a8af3cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxSlider: {fileID: 0}
+  musicSlider: {fileID: 0}
 --- !u!1 &1211682866250810953
 GameObject:
   m_ObjectHideFlags: 0

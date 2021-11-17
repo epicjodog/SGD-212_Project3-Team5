@@ -111,12 +111,14 @@ public class Menu : MonoBehaviour
                 ResumeGame();
                 Cursor.lockState = CursorLockMode.Locked;//Cursor is stuck in place
                 Cursor.visible = false;//Cursor is invisible 
+                AudioListener.volume = 1;
             }
             else
             {
                 PauseGame();
                 Cursor.visible = true;//Cursor is seen
                 Cursor.lockState = CursorLockMode.None;//Cursor can move around freely and not stuck in place
+                AudioListener.volume = 0;
             }
         }
     }

@@ -21,7 +21,8 @@ public class playerShip : MonoBehaviour
         catch { print("Warning: Audio Manager Component not attached to player!"); }
 
         audioMan.Play("Acceleration");
-        
+        audioMan.Play("Music");
+        GetComponent<VolumeController>().ChangeSFXVolume();
     }
 
     public void PitchYawInput(InputAction.CallbackContext context)
