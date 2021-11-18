@@ -276,6 +276,7 @@ MonoBehaviour:
   timerText: {fileID: 1604956097}
   startTime: 120
   levelNum: 2
+  losePanel: {fileID: 1299434680}
 --- !u!114 &34415065 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1268049686205342887, guid: aed9070899940c34c83475a12b8b5e61, type: 3}
@@ -4794,6 +4795,11 @@ PrefabInstance:
 --- !u!224 &1299434679 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 630211796578540417, guid: 198a92bf79422e84bbbfbf288bcf7fa0, type: 3}
+  m_PrefabInstance: {fileID: 1299434678}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1299434680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 630211796578540416, guid: 198a92bf79422e84bbbfbf288bcf7fa0, type: 3}
   m_PrefabInstance: {fileID: 1299434678}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1301865479
