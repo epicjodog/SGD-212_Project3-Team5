@@ -259,7 +259,7 @@ public class Menu : MonoBehaviour
         if (PlayerPrefs.HasKey("progress"))
         {
             PlayerPrefs.SetInt("progress", 0);
-            LevelProgress.instance.ShowTimes();
+            LevelProgress.instance.ResetTimes();
         }
     }    
     
