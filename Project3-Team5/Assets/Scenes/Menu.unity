@@ -4233,7 +4233,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Move the mouse to rotate the camera. \nLeft click to accelerate"
+  m_Text: "Move the mouse to rotate the camera. \nLeft click to accelerate. Use A
+    and D to rotate your ship."
 --- !u!222 &894940118
 CanvasRenderer:
   m_ObjectHideFlags: 0
