@@ -27,6 +27,9 @@ public class Menu : MonoBehaviour
     int creditsPanelCurrentPage = 0;
     AudioManager audioMan; //for the main menu
 
+    [Header("Transition")]
+    [SerializeField] Animator transition;
+
     public void loadLevel(string levelName) //migrate all the ui to this function
     {        
         //later, add an if statement seeing if the level has been unlocked.
@@ -261,6 +264,13 @@ public class Menu : MonoBehaviour
             PlayerPrefs.SetInt("progress", 0);
             LevelProgress.instance.ResetTimes();
         }
-    }    
-    
+    }
+
+    public IEnumerator DeathTransition()
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }

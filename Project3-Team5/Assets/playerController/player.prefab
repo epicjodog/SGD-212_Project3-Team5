@@ -5076,7 +5076,7 @@ MonoBehaviour:
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Crash
-    clip: {fileID: 8300000, guid: 1de68ce0d3819734698089d797db6e69, type: 3}
+    clip: {fileID: 8300000, guid: 78a2c065fdf9a96478cab988ca46f519, type: 3}
     volume: 0.6
     volumeVariance: 0
     pitch: 1
@@ -5101,6 +5101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxSlider: {fileID: 0}
   musicSlider: {fileID: 0}
+  isPlayer: 0
 --- !u!1 &1211682866250810953
 GameObject:
   m_ObjectHideFlags: 0
