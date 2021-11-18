@@ -1146,6 +1146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1964074066}
+  startTime: 120
   levelNum: 3
 --- !u!114 &173343213 stripped
 MonoBehaviour:
@@ -9244,6 +9245,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 665861844}
     m_Modifications:
+    - target: {fileID: 3540063247924722962, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1038.473
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540063247924722962, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 884.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540063247924722962, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000099182
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540063247924722962, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -275
+      objectReference: {fileID: 0}
     - target: {fileID: 3540063249530682026, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
       propertyPath: m_Name
       value: timerPanel
@@ -9278,11 +9295,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3540063249530682027, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 2206.1355
+      value: 1971.7976
       objectReference: {fileID: 0}
     - target: {fileID: 3540063249530682027, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 2072.8516
+      value: 1542.5112
       objectReference: {fileID: 0}
     - target: {fileID: 3540063249530682027, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
       propertyPath: m_LocalScale.x
@@ -9326,11 +9343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3540063249530682027, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -79.9
+      value: -87.750305
       objectReference: {fileID: 0}
     - target: {fileID: 3540063249530682027, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -43
+      value: -51.883224
       objectReference: {fileID: 0}
     - target: {fileID: 3540063249530682027, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9343,6 +9360,26 @@ PrefabInstance:
     - target: {fileID: 3540063249530682027, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540063249530682028, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b5f3d525dbb72364da50674a4a90376e, type: 3}
+    - target: {fileID: 3540063249530682028, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
+      propertyPath: m_Color.a
+      value: 0.49803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540063249530682028, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540063249530682028, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3540063249530682028, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 782f63c4765b5cf4d9837eafff5ebf44, type: 3}
