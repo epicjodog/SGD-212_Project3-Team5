@@ -35,18 +35,33 @@ public class LevelProgress : MonoBehaviour
             progInt = PlayerPrefs.GetInt("progress");
         }
 
-        if (PlayerPrefs.HasKey("level1"))
+        /*if (PlayerPrefs.HasKey("level1"))
         {
             time1 = PlayerPrefs.GetString("level1");
+        }
+        else
+        {
+            Debug.Log("PlayerPrefs Key does not exist for level 1. Creating now.");
+            PlayerPrefs.SetString("Level1", time1);
         }
         if (PlayerPrefs.HasKey("level2"))
         {
             time2 = PlayerPrefs.GetString("level2");
         }
+        else
+        {
+            Debug.Log("PlayerPrefs Key does not exist for level 2.Creating now.");
+            PlayerPrefs.SetString("Level2", time2);
+        }
         if (PlayerPrefs.HasKey("level3"))
         {
             time3 = PlayerPrefs.GetString("level3");
         }
+        else
+        {
+            Debug.Log("PlayerPrefs Key does not exist for level 3. Creating now.");
+            PlayerPrefs.SetString("Level3", time3);
+        }*/
         ShowTimes();
     }
 
