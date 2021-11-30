@@ -67,9 +67,9 @@ public class LevelProgress : MonoBehaviour
 
     public void ShowTimes()
     {
-        time1Text.text = "Time: " + time1;
-        time2Text.text = "Time: " + time2;
-        time3Text.text = "Time: " + time3;
+        time1Text.text = time1;
+        time2Text.text = time2;
+        time3Text.text = time3;
         progInt = PlayerPrefs.GetInt("progress");
 
         print(progInt);

@@ -34,18 +34,20 @@ public class Menu : MonoBehaviour
     {        
         //later, add an if statement seeing if the level has been unlocked.
         StartCoroutine(LevelTransition(levelName));
-        audioMan.Play("Select");
+        //audioMan.Play("Select");
     }
 
     private IEnumerator LevelTransition(string levelName)
     {
-        float offset = 1 - AudioListener.volume;
-        for (float vol = AudioListener.volume; vol >= 0; vol -= 0.1f) //lowers the volume for transition
+        Time.timeScale = 1f;//continues game
+        isPaused = false;
+        transition.SetTrigger("Start");
+        for (float vol = 1; vol >= 0; vol -= 0.1f) //lowers the volume for transition
         {
             AudioListener.volume = vol;
             yield return new WaitForSeconds(0.1f);
         }
-        yield return new WaitForSeconds(offset); //always has a second to transition
+        yield return new WaitForSeconds(1f);
 
         SceneManager.LoadScene(levelName);
     }
