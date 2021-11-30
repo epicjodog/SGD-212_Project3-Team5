@@ -7758,7 +7758,7 @@ PrefabInstance:
       objectReference: {fileID: 173343213}
     - target: {fileID: 1013539953136242880, guid: 88b6fd4131d40ed46abfbcea9045be18, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnMuteMusicButtonClick
+      value: ChangeMusicVolume
       objectReference: {fileID: 0}
     - target: {fileID: 1013539953320559926, guid: 88b6fd4131d40ed46abfbcea9045be18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
