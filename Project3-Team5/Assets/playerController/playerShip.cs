@@ -86,12 +86,18 @@ public class playerShip : MonoBehaviour
         }
         
     }
+    bool barrierHit = false;
     private void OnTriggerEnter(Collider other)
     {
+        if(barrierHit)
+        {
+            return;
+        }
         if (other.CompareTag("Barrier"))
         {
             audioMan.Play("Crash");
             StartCoroutine(FindObjectOfType<Menu>().DeathTransition());
+            barrierHit = true;
         }
     }
 
