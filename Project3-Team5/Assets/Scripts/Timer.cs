@@ -37,7 +37,7 @@ public class Timer : MonoBehaviour
     {
         int value = PlayerPrefs.GetInt("level" + levelNum);
 
-        if (value < startTime)
+        if (value > startTime)
         {
             PlayerPrefs.SetInt("level" + levelNum, startTime);
             PlayerPrefs.Save();
