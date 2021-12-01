@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class LevelProgress : MonoBehaviour
 {
     private int progInt = 0;
-    private string time1 = "0";
-    private string time2 = "0";
-    private string time3 = "0";
+    private int time1 = 0;
+    private int time2 = 0;
+    private int time3 = 0;
 
     public Text time1Text;
     public Text time2Text;
@@ -37,39 +37,39 @@ public class LevelProgress : MonoBehaviour
 
         if (PlayerPrefs.HasKey("level1"))
         {
-            time1 = PlayerPrefs.GetString("level1");
+            time1 = PlayerPrefs.GetInt("level1");
         }
         else
         {
             Debug.Log("PlayerPrefs Key does not exist for level 1. Creating now.");
-            PlayerPrefs.SetString("Level1", time1);
+            PlayerPrefs.SetInt("Level1", time1);
         }
         if (PlayerPrefs.HasKey("level2"))
         {
-            time2 = PlayerPrefs.GetString("level2");
+            time2 = PlayerPrefs.GetInt("level2");
         }
         else
         {
             Debug.Log("PlayerPrefs Key does not exist for level 2.Creating now.");
-            PlayerPrefs.SetString("Level2", time2);
+            PlayerPrefs.SetInt("Level2", time2);
         }
         if (PlayerPrefs.HasKey("level3"))
         {
-            time3 = PlayerPrefs.GetString("level3");
+            time3 = PlayerPrefs.GetInt("level3");
         }
         else
         {
             Debug.Log("PlayerPrefs Key does not exist for level 3. Creating now.");
-            PlayerPrefs.SetString("Level3", time3);
+            PlayerPrefs.SetInt("Level3", time3);
         }
         ShowTimes();
     }
 
     public void ShowTimes()
     {
-        time1Text.text = time1;
-        time2Text.text = time2;
-        time3Text.text = time3;
+        time1Text.text = "Time: " + time1;
+        time2Text.text = "Time: " + time2;
+        time3Text.text = "Time: " + time3;
         progInt = PlayerPrefs.GetInt("progress");
 
         print(progInt);
@@ -92,13 +92,13 @@ public class LevelProgress : MonoBehaviour
     }
     public void ResetTimes()
     {
-        PlayerPrefs.SetString("level1", "0");
-        PlayerPrefs.SetString("level2", "0");
-        PlayerPrefs.SetString("level3", "0");
+        PlayerPrefs.SetInt("level1", 0);
+        PlayerPrefs.SetInt("level2", 0);
+        PlayerPrefs.SetInt("level3", 0);
 
-        time1 = PlayerPrefs.GetString("level1");
-        time2 = PlayerPrefs.GetString("level2");
-        time3 = PlayerPrefs.GetString("level3");
+        time1 = PlayerPrefs.GetInt("level1");
+        time2 = PlayerPrefs.GetInt("level2");
+        time3 = PlayerPrefs.GetInt("level3");
         ShowTimes();
     }
 }
