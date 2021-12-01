@@ -22,7 +22,6 @@ public class playerShip : MonoBehaviour
 
         audioMan.Play("Acceleration");
         audioMan.Play("Music");
-        GetComponent<VolumeController>().ChangeSFXVolume();
     }
 
     public void PitchYawInput(InputAction.CallbackContext context)

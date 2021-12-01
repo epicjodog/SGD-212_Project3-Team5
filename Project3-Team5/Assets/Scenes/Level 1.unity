@@ -18515,7 +18515,23 @@ PrefabInstance:
       value: Music
       objectReference: {fileID: 0}
     - target: {fileID: 6387141481778570282, guid: aed9070899940c34c83475a12b8b5e61, type: 3}
+      propertyPath: sounds.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ee3aa14940a373e4b91a89ac59cbb365, type: 3}
+    - target: {fileID: 6387141481778570282, guid: aed9070899940c34c83475a12b8b5e61, type: 3}
+      propertyPath: sounds.Array.data[7].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387141481778570282, guid: aed9070899940c34c83475a12b8b5e61, type: 3}
+      propertyPath: sounds.Array.data[7].name
+      value: Ambiance
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387141481778570282, guid: aed9070899940c34c83475a12b8b5e61, type: 3}
       propertyPath: sounds.Array.data[6].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387141481778570282, guid: aed9070899940c34c83475a12b8b5e61, type: 3}
+      propertyPath: sounds.Array.data[7].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387141481778570282, guid: aed9070899940c34c83475a12b8b5e61, type: 3}
@@ -18523,7 +18539,15 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6387141481778570282, guid: aed9070899940c34c83475a12b8b5e61, type: 3}
+      propertyPath: sounds.Array.data[7].volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387141481778570282, guid: aed9070899940c34c83475a12b8b5e61, type: 3}
       propertyPath: sounds.Array.data[6].playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387141481778570282, guid: aed9070899940c34c83475a12b8b5e61, type: 3}
+      propertyPath: sounds.Array.data[7].playOnAwake
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
