@@ -9,15 +9,17 @@ public class Timer : MonoBehaviour
     [SerializeField] private int startTime = 120;
     [SerializeField] private int levelNum;
     [SerializeField] private GameObject losePanel;
+    bool isGameOver;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("timer");
+        isGameOver = false;
     }
 
     private IEnumerator timer()
     {
-        while (true)
+        while (!isGameOver)
         {
             timerText.text = "time: " + startTime;
             startTime--;
@@ -27,7 +29,8 @@ public class Timer : MonoBehaviour
                 losePanel.gameObject.SetActive(true);//Activates win panel when completing last checkpoint
                 Time.timeScale = 0f;// stops game
                 Cursor.lockState = CursorLockMode.None;//Cursor is allowed to move around freely and not stuck in place
-                Cursor.visible = true;//Cursor is seen        
+                Cursor.visible = true;//Cursor is seen
+                isGameOver = true;
             }
             yield return new WaitForSeconds(1);
         }

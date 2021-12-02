@@ -42,12 +42,12 @@ public class Menu : MonoBehaviour
         Time.timeScale = 1f;//continues game
         isPaused = false;
         transition.SetTrigger("Start");
-        for (float vol = 1; vol >= 0; vol -= 0.1f) //lowers the volume for transition
+        for (float vol = 1f; vol >= 0f; vol -= 0.1f) //lowers the volume for transition
         {
             AudioListener.volume = vol;
             yield return new WaitForSeconds(0.1f);
         }
-        yield return new WaitForSeconds(1f);
+        //yield return new WaitForSeconds(1f);
 
         SceneManager.LoadScene(levelName);
     }
