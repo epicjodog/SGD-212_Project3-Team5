@@ -22,6 +22,7 @@ public class playerShip : MonoBehaviour
 
         audioMan.Play("Acceleration");
         audioMan.Play("Music");
+        audioMan.Play("Ambiance");
     }
 
     public void PitchYawInput(InputAction.CallbackContext context)

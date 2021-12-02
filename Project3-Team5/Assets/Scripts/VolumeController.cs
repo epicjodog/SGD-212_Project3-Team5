@@ -47,8 +47,9 @@ public class VolumeController : MonoBehaviour
         if(isPlayer)
         {
             audioMan.ChangeVolume("Acceleration", PlayerPrefs.GetFloat("SFXVolume"));
+            audioMan.ChangeVolume("Ambiance", PlayerPrefs.GetFloat("SFXVolume") / 2);
         }
-        print("Volume: " + PlayerPrefs.GetFloat("SFXVolume"));
+        //print("Volume: " + PlayerPrefs.GetFloat("SFXVolume"));
         audioMan.ChangeVolume("Music", PlayerPrefs.GetFloat("MusicVolume"));
     }
 
