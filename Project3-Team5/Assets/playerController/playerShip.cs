@@ -32,6 +32,14 @@ public class playerShip : MonoBehaviour
         shipDir.y = moveInput.x;
     }
 
+    public void PitchYawController(InputAction.CallbackContext context)
+    {
+        Vector2 moveInput = context.ReadValue<Vector2>();
+
+        shipDir.x = moveInput.y * 500 * Time.deltaTime;
+        shipDir.y = moveInput.x * 500 * Time.deltaTime;
+    }
+
     public void RollInput(InputAction.CallbackContext context)
     {
         Vector2 moveInput = context.ReadValue<Vector2>();
